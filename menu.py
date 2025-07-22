@@ -1,7 +1,6 @@
 from limpiar_pantalla import*
 from agregar_estudiante import*
 from matricular_estudiante import*
-from 
 MAIN_MENU =  """
 ======================
 MENU PRINCIPAL
@@ -33,7 +32,7 @@ def main():
                 pausar_pantalla()
             case "3":
                 limpiar_pantalla()
-                add()
+                campus()
                 pausar_pantalla()
                 break
             case _:
