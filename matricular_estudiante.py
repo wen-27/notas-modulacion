@@ -11,13 +11,22 @@ def matricular_estudiante():
     opc=list(rutas.keys())
     for i, opcion in enumerate(opc, start=1):
         print(f'{i}. {opcion}')
+    while True:
+        try:
+            opcion = int(input('ingrese un numero de la ruta: '))-1
+            rutas.get(opc,-1)
+            if 0 <= opcion < len(opc):
+                break
+            else:
+                print("⚠️ Número fuera de rango. Intente nuevamente.")
+        except ValueError:
+            print("⚠️ Ingrese un número válido.")
 
-    opcion = int(input('ingrese un numero de la ruta: '))-1
-    rutas.get(opc,-1)
+        ruta = {
+            'nombre_ruta': opc[opcion],
+            'skills' : {}
+        }
+        alumnos.update({'ruta':ruta})
+        print(campus)   
 
-    ruta = {
-        'nombre_ruta': opc[opcion],
-        'skills' : {}
-    }
-    alumnos.update({'ruta':ruta})
-    print(campus)
+    print("✅ Matriculado correctamente.")
